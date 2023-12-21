@@ -8,11 +8,12 @@ project(${PROPERTY_NAME} VERSION 0.0.1 LANGUAGES CSharp)
 
 add_library(${PROPERTY_NAME} SHARED
 	src/SkyForge/Core/Application.cs
-	
+	src/SkyForge/Core/EntryPoint.cs
 )
 
 add_executable(${EXAMPLE_PROPERTY_NAME}
 	src/ExampleGame/Game.cs
+	src/ExampleGame/ExampleGame.cs
 	
 )
 

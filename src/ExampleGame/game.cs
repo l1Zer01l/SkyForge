@@ -10,8 +10,9 @@ namespace ExampleGame
 
         public static void Main(string[] args)
         {
-            Application application = new Application();
-            //application.Run();
+            EntryPoint.Init();
+            EntryPoint.Application = new ExampleGame();
+            EntryPoint.Main();
             Console.ReadKey();
         }
 
