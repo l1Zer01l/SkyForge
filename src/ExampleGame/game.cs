@@ -13,7 +13,7 @@ namespace ExampleGame
             EntryPoint.Init();
             EntryPoint.Application = new ExampleGame();
             EntryPoint.Main();
-            Console.ReadKey();
+
         }
 
     }

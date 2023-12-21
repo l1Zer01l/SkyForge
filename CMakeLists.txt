@@ -9,6 +9,9 @@ project(${PROPERTY_NAME} VERSION 0.0.1 LANGUAGES CSharp)
 add_library(${PROPERTY_NAME} SHARED
 	src/SkyForge/Core/Application.cs
 	src/SkyForge/Core/EntryPoint.cs
+	src/SkyForge/IGameObject.cs
+	src/SkyForge/GameObject.cs
+	src/SkyForge/Math/Vector2.cs
 )
 
 add_executable(${EXAMPLE_PROPERTY_NAME}
