@@ -17,7 +17,7 @@ add_library(${PROPERTY_NAME} SHARED
 add_executable(${EXAMPLE_PROPERTY_NAME}
 	src/ExampleGame/Game.cs
 	src/ExampleGame/ExampleGame.cs
-	
+	src/ExampleGame/Player.cs
 )
 
 target_link_libraries(${EXAMPLE_PROPERTY_NAME} PRIVATE ${PROPERTY_NAME}) 

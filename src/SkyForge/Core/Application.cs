@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace SkyForge.Core
 {
@@ -7,7 +8,7 @@ namespace SkyForge.Core
     {
         private static Application m_instance;
         private bool m_running = true;
-
+        private List<IGameObject> m_gameObjects = new List<IGameObject>();
         public Application()
         {
             if (m_instance == null)
@@ -22,6 +23,27 @@ namespace SkyForge.Core
             while (m_running)
             {
 
+                UpdateGameObject();
+            }
+        }
+
+        public void AddGameObject(IGameObject gameObject)
+        {
+            gameObject.Start();
+            m_gameObjects.Add(gameObject);
+        }
+
+        public void RemoveGameObject(IGameObject gameObject)
+        {
+            m_gameObjects.Remove(gameObject);
+            gameObject.Destroy();
+        }
+
+        private void UpdateGameObject()
+        {
+            foreach (var gameObject in m_gameObjects)
+            {
+                gameObject.Update();
             }
         }
 

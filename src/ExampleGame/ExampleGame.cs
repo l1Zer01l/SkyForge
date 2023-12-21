@@ -10,7 +10,7 @@ namespace ExampleGame
         public ExampleGame()
         {
             Console.WriteLine("Initialize Game");
-            
+            AddGameObject(new Player());
         }
 
 
