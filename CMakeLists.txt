@@ -12,7 +12,7 @@ add_library(${PROPERTY_NAME} SHARED
 )
 
 add_executable(${EXAMPLE_PROPERTY_NAME}
-	src/ExampleGame/game.cs
+	src/ExampleGame/Game.cs
 	
 )
 
