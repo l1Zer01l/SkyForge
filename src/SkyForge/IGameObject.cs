@@ -1,11 +1,10 @@
-using SkyForge.Math;
 
 namespace SkyForge
 {
 
     public interface IGameObject
     {
-        Vector2 position { get; set; }
+        T GetComponent<T>() where T : BaseComponent;
 
         void Start();
         void Update();

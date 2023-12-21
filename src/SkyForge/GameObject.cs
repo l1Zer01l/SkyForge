@@ -1,21 +1,56 @@
-using SkyForge.Math;
+using System.Collections.Generic;
 
 namespace SkyForge
 {
 
     public abstract class GameObject : IGameObject
     {
-        public Vector2 position { get; set; }
 
+        private List<IComponent> m_components = new List<IComponent>();
         public void Destroy()
         {
             OnDestroy();
-
         }
 
         public virtual void OnDestroy() { }
-        public abstract void Start();
-        public abstract void Update();
+        public virtual void Start()
+        {
+            foreach (var component in m_components)
+            {
+                component.Start();
+            }
+        }
+        public void Update()
+        {
+            foreach (var component in m_components)
+            {
+                component.Update();
+            }
+        }
+
+        public T GetComponent<T>() where T : BaseComponent
+        {
+            foreach (var component in m_components)
+            {
+                if (typeof(T) == component.GetType())
+                {
+                    return (T)component;
+                }
+            }
+            return null;
+        }
+        
+        public void AddComponent(IComponent component, IGameObject parent)
+        {
+            component.InitGameObject(parent);
+            m_components.Add(component);
+        }
+
+        public void RemoveComponent(IComponent component)
+        {
+            m_components.Remove(component);
+            component.OnDestory();
+        }
     }
 
 

@@ -1,5 +1,4 @@
 using SkyForge;
-using SkyForge.Math;
 using System;
 
 namespace ExampleGame
@@ -9,15 +8,40 @@ namespace ExampleGame
     {
         public override void Start()
         {
-            position = new Vector2(1, 1);
-            Console.WriteLine("Start");
+            AddComponent(new PlayerMovement(), this);
+            AddComponent(new TestComponent(), this);
+            base.Start();
+        }
+  
+    }
+
+    public class PlayerMovement : BaseComponent
+    {
+        
+        public override void Start()
+        {
+
+            Console.WriteLine("Start Component");
         }
 
         public override void Update()
         {
-            Console.WriteLine("Update");
+            Console.WriteLine("PlayerMove");         
         }
     }
 
+    public class TestComponent : BaseComponent
+    {
+        public float speed = 2;
+        public override void Start()
+        {
+            
+        }
+
+        public override void Update()
+        {
+            
+        }
+    }
 
 }

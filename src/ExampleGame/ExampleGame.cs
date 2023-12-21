@@ -13,9 +13,6 @@ namespace ExampleGame
             AddGameObject(new Player());
         }
 
-
-
-
     }
 
 }

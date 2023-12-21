@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace SkyForge.Core
 {
-
     public class Application
     {
         private static Application m_instance;
