@@ -1,3 +1,4 @@
+using SkyForge.Render;
 using System.Collections.Generic;
 
 namespace SkyForge
@@ -51,6 +52,8 @@ namespace SkyForge
             m_components.Remove(component);
             component.OnDestory();
         }
+
+        public abstract void Draw(GraphicsContext context);
     }
 
 
