@@ -1,5 +1,7 @@
+using SkyForge.Render;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace SkyForge.Core
 {
@@ -24,8 +26,11 @@ namespace SkyForge.Core
         {
             while (m_running)
             {
-
                 UpdateGameObject();
+                GraphicsSystem.Begin();
+                RenderGameObject();
+                GraphicsSystem.End();
+                Thread.Sleep(23);
             }
         }
 
@@ -39,6 +44,15 @@ namespace SkyForge.Core
         {
             m_gameObjects.Remove(gameObject);
             gameObject.Destroy();
+        }
+
+
+        private void RenderGameObject()
+        {
+            foreach (var gameObject in m_gameObjects)
+            {
+                gameObject.Draw(GraphicsSystem.graphicsContext);
+            }
         }
 
         private void UpdateGameObject()

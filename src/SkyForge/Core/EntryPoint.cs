@@ -1,3 +1,4 @@
+using SkyForge.Render;
 using System;
 
 namespace SkyForge.Core
@@ -11,6 +12,7 @@ namespace SkyForge.Core
 
         public static void Init()
         {
+            GraphicsSystem.Init();
             Console.WriteLine("Initialize SkyForge");
 
         }

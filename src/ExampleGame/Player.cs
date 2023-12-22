@@ -1,4 +1,6 @@
 using SkyForge;
+using SkyForge.Math;
+using SkyForge.Render;
 using System;
 
 namespace ExampleGame
@@ -6,6 +8,23 @@ namespace ExampleGame
 
     public class Player : GameObject
     {
+        private char[] texture = new char[] 
+        { 
+            ' ', ' ', '^', '^', ' ', ' ',
+            ' ', ' ', '0', '0', ' ', ' ',
+            ' ', '/', '-', '-', '\\', ' ',
+            ' ', '\\', '#', '#', '/', ' ',
+            ' ', ' ', '#', '#', ' ', ' ',
+            ' ', ' ', '|', '|', ' ', ' ',
+            ' ', ' ', '|', '|', ' ', ' ',
+            ' ', ' ', '=', '=', ' ', ' ',
+        };
+
+        public override void Draw(GraphicsContext context)
+        {
+            context.Draw(texture, new Vector2(6, 8), new Vector2(0, 0));
+        }
+
         public override void Start()
         {
             AddComponent(new PlayerMovement(), this);
