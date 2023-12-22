@@ -30,7 +30,7 @@ namespace SkyForge.Input
                 {
                     m_currentKey = new InputKey(InputState.Press, key);
                 }
-                Thread.Sleep(3);
+                Thread.Sleep(6);
                 m_currentKey = new InputKey(InputState.None, key);
             }
         }

@@ -32,7 +32,7 @@ namespace SkyForge.Core
                 GraphicsSystem.Begin();
                 RenderGameObject();
                 GraphicsSystem.End();
-                Thread.Sleep(23);
+                Thread.Sleep(3);
             }
         }
 

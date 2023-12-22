@@ -1,3 +1,4 @@
+using SkyForge.Logs;
 using System;
 
 namespace SkyForge.Render
@@ -15,7 +16,7 @@ namespace SkyForge.Render
             height = 28;
             backGroundFill = ' ';
             graphicsContext = new GraphicsContext(width, height);
-            Console.WriteLine("Initialized Graphics System");
+            Log.CoreLogger.Logging("Initialized Graphics System", LogLevel.Info);
             
         }
 
