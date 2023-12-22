@@ -17,7 +17,7 @@ add_library(${PROPERTY_NAME} SHARED
 	src/SkyForge/GameComponent/IComponent.cs
 	src/SkyForge/GameComponent/BaseComponent.cs
 	src/SkyForge/GameObject/IGameObject.cs
-	src/SkyForge/GameObject/GameObject.cs
+	srcd/SkyForge/GameObject/GameObject.cs
 
 )
 
