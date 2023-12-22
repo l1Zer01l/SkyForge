@@ -1,4 +1,4 @@
-using System;
+using SkyForge.Logs;
 using System.Collections.Generic;
 
 namespace SkyForge.Core
@@ -17,7 +17,8 @@ namespace SkyForge.Core
             {
                 m_instance = this;
             }
-            Console.WriteLine("Welcome to SkyForge!");
+
+            Log.CoreLogger.Logging("Welcome to SkyForge!", LogLevel.Info);
         }
 
         public void Run()

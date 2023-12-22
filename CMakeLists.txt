@@ -13,6 +13,7 @@ add_library(${PROPERTY_NAME} SHARED
 	src/SkyForge/LogSystem/Log.cs
 	src/SkyForge/LogSystem/Logger.cs
 	src/SkyForge/LogSystem/LogLevel.cs
+	src/SkyForge/LogSystem/LoggerImpl.cs
 	src/SkyForge/GameComponent/IComponent.cs
 	src/SkyForge/GameComponent/BaseComponent.cs
 	src/SkyForge/GameObject/IGameObject.cs

@@ -1,6 +1,6 @@
 using System;
 
-namespace SkyForge.Log
+namespace SkyForge.Logs
 {
     public class LogLevel
     {

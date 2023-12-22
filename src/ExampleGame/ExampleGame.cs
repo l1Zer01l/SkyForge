@@ -1,5 +1,5 @@
 using SkyForge.Core;
-using System;
+using SkyForge.Logs;
 
 namespace ExampleGame
 {
@@ -9,7 +9,7 @@ namespace ExampleGame
 
         public ExampleGame()
         {
-            Console.WriteLine("Initialize Game");
+            Log.ClientLogger.Logging("Initialize Game", LogLevel.Info);
             AddGameObject(new Player());
         }
 
