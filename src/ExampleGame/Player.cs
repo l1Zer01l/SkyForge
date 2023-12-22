@@ -1,4 +1,5 @@
 using SkyForge;
+using SkyForge.Input;
 using System;
 
 namespace ExampleGame
@@ -26,7 +27,9 @@ namespace ExampleGame
 
         public override void Update()
         {
-            Console.WriteLine("PlayerMove");         
+            if (InputSystem.IsKeyPressed(KeyCode.A))
+                Console.WriteLine("Pressed A");
+                    
         }
     }
 

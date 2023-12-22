@@ -14,6 +14,10 @@ add_library(${PROPERTY_NAME} SHARED
 	src/SkyForge/LogSystem/Logger.cs
 	src/SkyForge/LogSystem/LogLevel.cs
 	src/SkyForge/LogSystem/LoggerImpl.cs
+	src/SkyForge/Input/InputSystem.cs
+	src/SkyForge/Input/KeyCode.cs
+	src/SkyForge/Input/InputKey.cs
+	src/SkyForge/Input/InputState.cs
 	src/SkyForge/GameComponent/IComponent.cs
 	src/SkyForge/GameComponent/BaseComponent.cs
 	src/SkyForge/GameObject/IGameObject.cs
