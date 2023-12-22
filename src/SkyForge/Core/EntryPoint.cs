@@ -1,3 +1,4 @@
+using SkyForge.Input;
 using System;
 
 namespace SkyForge.Core
@@ -12,7 +13,7 @@ namespace SkyForge.Core
         public static void Init()
         {
             Console.WriteLine("Initialize SkyForge");
-
+            InputSystem.Init();
         }
 
         public static int Main()

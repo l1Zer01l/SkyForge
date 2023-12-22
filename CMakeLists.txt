@@ -10,6 +10,10 @@ add_library(${PROPERTY_NAME} SHARED
 	src/SkyForge/Core/Application.cs
 	src/SkyForge/Core/EntryPoint.cs
 	src/SkyForge/Math/Vector2.cs
+	src/SkyForge/Input/InputSystem.cs
+	src/SkyForge/Input/KeyCode.cs
+	src/SkyForge/Input/InputKey.cs
+	src/SkyForge/Input/InputState.cs
 	src/SkyForge/GameComponent/IComponent.cs
 	src/SkyForge/GameComponent/BaseComponent.cs
 	src/SkyForge/GameObject/IGameObject.cs

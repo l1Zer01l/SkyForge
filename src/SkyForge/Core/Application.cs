@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace SkyForge.Core
 {
@@ -26,6 +27,7 @@ namespace SkyForge.Core
             {
 
                 UpdateGameObject();
+                Thread.Sleep(2);
             }
         }
 
