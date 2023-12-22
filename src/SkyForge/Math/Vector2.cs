@@ -3,8 +3,8 @@ namespace SkyForge.Math
 {
     public class Vector2
     {
-        public float x;
-        public float y;
+        public float x { get; set; }
+        public float y { get; set; }
 
         public Vector2() : this(0.0f, 0.0f) { }
         public Vector2(float x, float y)

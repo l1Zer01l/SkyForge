@@ -1,6 +1,4 @@
 using SkyForge.Core;
-using System;
-
 
 namespace ExampleGame
 {

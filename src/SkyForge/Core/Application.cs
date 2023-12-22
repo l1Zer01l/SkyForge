@@ -8,6 +8,9 @@ namespace SkyForge.Core
         private static Application m_instance;
         private bool m_running = true;
         private List<IGameObject> m_gameObjects = new List<IGameObject>();
+
+        public Application GetApplication() => m_instance;
+
         public Application()
         {
             if (m_instance == null)
