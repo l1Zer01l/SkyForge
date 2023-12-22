@@ -10,6 +10,9 @@ add_library(${PROPERTY_NAME} SHARED
 	src/SkyForge/Core/Application.cs
 	src/SkyForge/Core/EntryPoint.cs
 	src/SkyForge/Math/Vector2.cs
+	src/SkyForge/LogSystem/Log.cs
+	src/SkyForge/LogSystem/Logger.cs
+	src/SkyForge/LogSystem/LogLevel.cs
 	src/SkyForge/GameComponent/IComponent.cs
 	src/SkyForge/GameComponent/BaseComponent.cs
 	src/SkyForge/GameObject/IGameObject.cs
