@@ -1,3 +1,4 @@
+using SkyForge.Logs;
 using System;
 using System.Threading;
 
@@ -12,7 +13,7 @@ namespace SkyForge.Input
             ThreadStart threadStart = new ThreadStart(UpdateInputSystem);
             Thread thread = new Thread(threadStart);
             thread.Start();
-            Console.WriteLine("Init InputSystem");
+            Log.CoreLogger.Logging("Initialized Input System", LogLevel.Info);
         }
 
 
