@@ -12,7 +12,7 @@ namespace SkyForge.Core
 
         public static void Init()
         {
-            GraphicsSystem.Init();
+            
             Console.WriteLine("Initialize SkyForge");
 
         }

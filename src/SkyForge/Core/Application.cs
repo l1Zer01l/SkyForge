@@ -20,6 +20,7 @@ namespace SkyForge.Core
                 m_instance = this;
             }
             Console.WriteLine("Welcome to SkyForge!");
+            GraphicsSystem.Init(200, 50, '.', ConsoleColor.Blue);
         }
 
         public void Run()
@@ -30,7 +31,7 @@ namespace SkyForge.Core
                 GraphicsSystem.Begin();
                 RenderGameObject();
                 GraphicsSystem.End();
-                Thread.Sleep(23);
+                Thread.Sleep(3);
             }
         }
 
