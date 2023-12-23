@@ -1,35 +1,52 @@
 using SkyForge.Math;
+using SkyForge.Window;
+using System;
 
 namespace SkyForge.Render
 {
     public class GraphicsContext
     {
+        public WindowConsole window { get; }
         public char[] buffer { get; }
-        public int width { get; }
-        public int height { get; }
+        public ConsoleColor[] bufferColor { get; }
+        
+        public char backGroundFill { get; set; }
+        public ConsoleColor backGroundColor { get; set; }
 
-        public GraphicsContext(int width, int height)
+        public GraphicsContext(WindowConsole window)
         {
-            this.width = width;
-            this.height = height;
-            buffer = new char[width * height];
+            this.window = window;
+            buffer = new char[window.windowWidth * window.windowHeight];
+            bufferColor = new ConsoleColor[buffer.Length];
+            
         }
 
-        public void Clear(char backGround)
+        public void Clear()
         {
             for (int i = 0; i < buffer.Length; i++)
-                buffer[i] = backGround;
-        }
-
-        public void Draw(char[] texture, Vector2 size, Vector2 position)
-        {
-            for (int x = 0; x < size.x; x++)
             {
-                for (int y = 0; y < size.y; y++)
+                buffer[i] = backGroundFill;
+                bufferColor[i] = backGroundColor;
+            }         
+        }    
+        public void Draw(Texture texture, Vector2 position)
+        {
+            for (int x = 0; x < texture.size.x; x++)
+            {
+                for (int y = 0; y < texture.size.y; y++)
                 {
-                    buffer[x + (int)position.x + (y + (int)position.y) * width] = texture[x + y * (int)size.x];
+                    
+                     buffer[x + (int)position.x + (y + (int)position.y) * window.windowWidth] = texture.sprite[x + y * (int)texture.size.x];
+                     bufferColor[x + (int)position.x + (y + (int)position.y) * window.windowWidth] = texture.color[x + y * (int)texture.size.x];
+                    
                 }
             }
+        }
+
+
+        public void RenderBuffer()
+        {
+            window.Draw(buffer, bufferColor);
         }
     }
 }

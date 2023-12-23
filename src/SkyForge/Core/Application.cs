@@ -1,5 +1,6 @@
 using SkyForge.Logs;
 using SkyForge.Render;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -21,13 +22,13 @@ namespace SkyForge.Core
             }
 
             Log.CoreLogger.Logging("Welcome to SkyForge!", LogLevel.Info);
+            GraphicsSystem.Init(200, 50, '.', ConsoleColor.Blue);
         }
 
         public void Run()
         {
             while (m_running)
             {
-
                 UpdateGameObject();
                 GraphicsSystem.Begin();
                 RenderGameObject();

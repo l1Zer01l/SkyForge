@@ -24,6 +24,9 @@ add_library(${PROPERTY_NAME} SHARED
 	src/SkyForge/GameObject/GameObject.cs
 	src/SkyForge/Graphics/GraphicsContext.cs
 	src/SkyForge/Graphics/GraphicsSystem.cs
+	src/SkyForge/Graphics/Texture.cs
+	src/SkyForge/Graphics/WindowConsole.cs
+	
 )
 
 add_executable(${EXAMPLE_PROPERTY_NAME}

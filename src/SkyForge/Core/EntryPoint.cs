@@ -1,6 +1,5 @@
 using SkyForge.Logs;
 using SkyForge.Input;
-using SkyForge.Render;
 
 
 namespace SkyForge.Core
@@ -16,7 +15,6 @@ namespace SkyForge.Core
         {
             Log.Init();
             InputSystem.Init();
-            GraphicsSystem.Init();
             Log.CoreLogger.Logging("Initialized SkyForge", LogLevel.Info);
             
         }
