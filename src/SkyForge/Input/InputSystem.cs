@@ -44,6 +44,24 @@ namespace SkyForge.Input
         {
             if (key == 'a' || key == 'A')
                 return KeyCode.A;
+            if (key == 's' || key == 'S')
+                return KeyCode.S;
+            if (key == 'd' || key == 'D')
+                return KeyCode.D;
+            if (key == 'w' || key == 'W')
+                return KeyCode.W;
+            if (key == 'q' || key == 'Q')
+                return KeyCode.Q;
+            if (key == 'e' || key == 'E')
+                return KeyCode.E;
+            if (key == 'f' || key == 'F')
+                return KeyCode.F;
+            if (key == 'r' || key == 'R')
+                return KeyCode.R;
+            if (key == 't' || key == 'T')
+                return KeyCode.T;
+            if (key == 'g' || key == 'G')
+                return KeyCode.G;
             return KeyCode.None;
         }
     }
