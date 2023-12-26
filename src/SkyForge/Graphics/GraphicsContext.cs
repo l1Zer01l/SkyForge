@@ -8,17 +8,16 @@ namespace SkyForge.Render
     {
         public WindowConsole window { get; }
         public char[] buffer { get; }
-        public ConsoleColor[] bufferColor { get; }
-        
         public char backGroundFill { get; set; }
-        public ConsoleColor backGroundColor { get; set; }
+        public ConsoleColor backGroundColor { get => window.GetBackGroundColor(); set => window.SetBackGroundColor(value); }         
+        public ConsoleColor foreingColor { get => window.GetForeColor(); set => window.SetForeColor(value); }
+
 
         public GraphicsContext(WindowConsole window)
         {
             this.window = window;
             buffer = new char[window.windowWidth * window.windowHeight];
-            bufferColor = new ConsoleColor[buffer.Length];
-            
+           
         }
 
         public void Clear()
@@ -26,7 +25,6 @@ namespace SkyForge.Render
             for (int i = 0; i < buffer.Length; i++)
             {
                 buffer[i] = backGroundFill;
-                bufferColor[i] = backGroundColor;
             }         
         }    
         public void Draw(Texture texture, Vector2 position)
@@ -35,10 +33,10 @@ namespace SkyForge.Render
             {
                 for (int y = 0; y < texture.size.y; y++)
                 {
-                    
-                     buffer[x + (int)position.x + (y + (int)position.y) * window.windowWidth] = texture.sprite[x + y * (int)texture.size.x];
-                     bufferColor[x + (int)position.x + (y + (int)position.y) * window.windowWidth] = texture.color[x + y * (int)texture.size.x];
-                    
+                    if (texture.sprite[x + y * (int)texture.size.x] != ' ')
+                    {
+                        buffer[x + (int)position.x + (y + (int)position.y) * window.windowWidth] = texture.sprite[x + y * (int)texture.size.x];
+                    }   
                 }
             }
         }
@@ -46,7 +44,7 @@ namespace SkyForge.Render
 
         public void RenderBuffer()
         {
-            window.Draw(buffer, bufferColor);
+            window.Draw(buffer);
         }
     }
 }

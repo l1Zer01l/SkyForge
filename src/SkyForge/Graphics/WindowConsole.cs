@@ -1,5 +1,3 @@
-using SkyForge.Math;
-using SkyForge.Render;
 using System;
 
 namespace SkyForge.Window
@@ -25,16 +23,32 @@ namespace SkyForge.Window
         }
 
 
-        public void Draw(char[] buffer, ConsoleColor[] color)
+        public void Draw(char[] buffer)
         {
             Console.SetCursorPosition(0, 0);
-            for (int i = 0; i < buffer.Length; i++)
-            {
-                Console.ForegroundColor = color[i];
-                Console.Write(buffer[i]);   
-            }
+            Console.Write(buffer);
+
         }
 
+        public void SetBackGroundColor(ConsoleColor color)
+        {
+            Console.BackgroundColor = color;
+        }
+
+        public void SetForeColor(ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+        }
+
+        public ConsoleColor GetForeColor()
+        {
+            return Console.ForegroundColor;
+        }
+
+        public ConsoleColor GetBackGroundColor()
+        {
+            return Console.BackgroundColor;
+        }
     }
 
 }

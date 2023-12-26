@@ -20,10 +20,9 @@ namespace SkyForge.Render
             m_color = new ConsoleColor[(int)size.x * (int)size.y];
         }
 
-        public void SetTexture(char[] sprite, ConsoleColor[] color)
+        public void SetTexture(char[] sprite)
         {
             m_sprite = sprite;
-            m_color = color;
         }
 
     }

@@ -22,7 +22,7 @@ namespace SkyForge.Core
             }
 
             Log.CoreLogger.Logging("Welcome to SkyForge!", LogLevel.Info);
-            GraphicsSystem.Init(200, 50, '.', ConsoleColor.Blue);
+            GraphicsSystem.Init(200, 50, ' ', ConsoleColor.Black);
         }
 
         public void Run()

@@ -20,7 +20,8 @@ namespace SkyForge.Input
         private static void UpdateInputSystem()
         {
             while (true)
-            {        
+            {
+                
                 var key = Console.ReadKey(true).KeyChar;
                 if (m_currentKey.keyPressed == key)
                 {
@@ -30,7 +31,7 @@ namespace SkyForge.Input
                 {
                     m_currentKey = new InputKey(InputState.Press, key);
                 }
-                Thread.Sleep(6);
+                Thread.Sleep(12);
                 m_currentKey = new InputKey(InputState.None, key);
             }
         }
