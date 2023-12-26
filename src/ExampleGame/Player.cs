@@ -43,6 +43,19 @@ namespace ExampleGame
     {
         private TestComponent m_testComponent;
         private int count = 1;
+
+        public override void OnEvent(KeyCode key)
+        {
+            if (key == KeyCode.A)
+                m_testComponent.position.x -= 1;
+            if (key == KeyCode.D)
+                m_testComponent.position.x += 1;
+            if (key == KeyCode.S)
+                m_testComponent.position.y += 1;
+            if (key == KeyCode.W)
+                m_testComponent.position.y -= 1;
+        }
+
         public override void Start()
         {
             m_testComponent = GetComponent<TestComponent>();
@@ -52,15 +65,6 @@ namespace ExampleGame
         public override void Update()
         {
 
-            if (InputSystem.IsKeyPressed(KeyCode.A))
-                m_testComponent.position.x -= 1;
-            if (InputSystem.IsKeyPressed(KeyCode.D))
-                m_testComponent.position.x += 1;
-            if (InputSystem.IsKeyPressed(KeyCode.S))
-                m_testComponent.position.y += 1;
-            if (InputSystem.IsKeyPressed(KeyCode.W))
-                m_testComponent.position.y -= 1;
-
         }
     }
 
@@ -68,6 +72,11 @@ namespace ExampleGame
     {
         public Vector2 position = new Vector2();
         public float speed = 2;
+
+        public override void OnEvent(KeyCode key)
+        {
+            
+        }
 
         public override void Start()
         {

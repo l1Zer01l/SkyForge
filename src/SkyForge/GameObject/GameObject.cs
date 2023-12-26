@@ -1,3 +1,4 @@
+using SkyForge.Input;
 using SkyForge.Render;
 using System.Collections.Generic;
 
@@ -54,6 +55,15 @@ namespace SkyForge
         }
 
         public abstract void Draw(GraphicsContext context);
+
+        public void OnEvent(KeyCode key)
+        {
+            foreach (var component in m_components)
+            {
+                component.OnEvent(key);
+            }
+
+        }
     }
 
 

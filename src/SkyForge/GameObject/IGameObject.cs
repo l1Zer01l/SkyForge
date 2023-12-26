@@ -1,4 +1,5 @@
 
+using SkyForge.Input;
 using SkyForge.Render;
 
 namespace SkyForge
@@ -10,6 +11,7 @@ namespace SkyForge
 
         void Draw(GraphicsContext context);
         void Start();
+        void OnEvent(KeyCode key);
         void Update();
         void Destroy();
         void OnDestroy();

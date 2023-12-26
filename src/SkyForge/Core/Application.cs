@@ -1,3 +1,4 @@
+using SkyForge.Input;
 using SkyForge.Logs;
 using SkyForge.Render;
 using System;
@@ -20,9 +21,10 @@ namespace SkyForge.Core
             {
                 m_instance = this;
             }
-
-            Log.CoreLogger.Logging("Welcome to SkyForge!", LogLevel.Info);
             GraphicsSystem.Init(200, 50, ' ', ConsoleColor.Black);
+            InputSystem.OnKeyPressedEvent += OnEvent;
+            Log.CoreLogger.Logging("Welcome to SkyForge!", LogLevel.Info);
+            
         }
 
         public void Run()
@@ -63,6 +65,14 @@ namespace SkyForge.Core
             foreach (var gameObject in m_gameObjects)
             {
                 gameObject.Update();
+            }
+        }
+
+        private void OnEvent(KeyCode keyCode)
+        {
+            foreach (var gameObject in m_gameObjects)
+            {
+                gameObject.OnEvent(keyCode);
             }
         }
 

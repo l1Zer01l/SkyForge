@@ -1,4 +1,6 @@
 
+using SkyForge.Input;
+
 namespace SkyForge
 {
     public abstract class BaseComponent : IComponent
@@ -23,5 +25,8 @@ namespace SkyForge
         public abstract void Start();
 
         public abstract void Update();
+
+        public abstract void OnEvent(KeyCode key);
+       
     }
 }

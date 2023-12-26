@@ -1,4 +1,6 @@
 
+using SkyForge.Input;
+
 namespace SkyForge
 {
 
@@ -7,6 +9,7 @@ namespace SkyForge
         IGameObject gameObject { get; }
         void InitGameObject(IGameObject gameObject);
         void Start();
+        void OnEvent(KeyCode key);
         void Update();
         void OnDestory();
 

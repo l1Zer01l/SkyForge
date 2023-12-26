@@ -4,10 +4,10 @@ using System.Threading;
 
 namespace SkyForge.Input
 {
-
+    public delegate void KeyPressed(KeyCode keyCode);
     public static class InputSystem
     {
-        private static InputKey m_currentKey = new InputKey(InputState.None, '\0');
+        public static KeyPressed OnKeyPressedEvent;
         public static void Init()
         {
             ThreadStart threadStart = new ThreadStart(UpdateInputSystem);
@@ -19,26 +19,9 @@ namespace SkyForge.Input
 
         private static void UpdateInputSystem()
         {
-            while (true)
-            {
-                
-                var key = Console.ReadKey(true).KeyChar;
-                if (m_currentKey.keyPressed == key)
-                {
-                    m_currentKey = new InputKey(InputState.Repeat, key);
-                }
-                else
-                {
-                    m_currentKey = new InputKey(InputState.Press, key);
-                }
-                Thread.Sleep(12);
-                m_currentKey = new InputKey(InputState.None, key);
-            }
-        }
-
-        public static bool IsKeyPressed(KeyCode keyCode)
-        {
-            return (m_currentKey.state == InputState.Press || m_currentKey.state == InputState.Repeat) && GetKeyCode(m_currentKey.keyPressed) == keyCode;
+            var key = Console.ReadKey(true).KeyChar;
+            OnKeyPressedEvent?.Invoke(GetKeyCode(key));
+            UpdateInputSystem();
         }
 
         private static KeyCode GetKeyCode(char key)
