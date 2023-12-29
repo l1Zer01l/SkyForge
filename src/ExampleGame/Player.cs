@@ -9,20 +9,9 @@ namespace ExampleGame
 
     public class Player : GameObject
     {
-        private char[] sprite = new char[] 
-        { 
-            ' ', ' ', '^', '^', ' ', ' ',
-            ' ', ' ', '0', '0', ' ', ' ',
-            ' ', '/', '-', '-', '\\', ' ',
-            ' ', '\\', '#', '#', '/', ' ',
-            ' ', ' ', '#', '#', ' ', ' ',
-            ' ', ' ', '|', '|', ' ', ' ',
-            ' ', ' ', '|', '|', ' ', ' ',
-            ' ', ' ', '=', '=', ' ', ' ',
-        };
         private TestComponent testComponent = new TestComponent();
         
-        private Texture texture = new Texture(new Vector2(6, 8));
+        private Texture texture = new Texture(new Vector2(12, 20), @"A:\dev\ñ#\SkyForge\resource\player.png");
         
         public override void Draw(GraphicsContext context)
         {
@@ -31,7 +20,6 @@ namespace ExampleGame
 
         public override void Start()
         {           
-            texture.SetTexture(sprite);
             AddComponent(new PlayerMovement(), this);
             AddComponent(testComponent, this);
             base.Start();

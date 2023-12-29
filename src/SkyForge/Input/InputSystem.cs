@@ -19,34 +19,36 @@ namespace SkyForge.Input
 
         private static void UpdateInputSystem()
         {
-            var key = Console.ReadKey(true).KeyChar;
+            var key = Console.ReadKey(true).Key;
             OnKeyPressedEvent?.Invoke(GetKeyCode(key));
             UpdateInputSystem();
         }
 
-        private static KeyCode GetKeyCode(char key)
+        private static KeyCode GetKeyCode(ConsoleKey key)
         {
-            if (key == 'a' || key == 'A')
-                return KeyCode.A;
-            if (key == 's' || key == 'S')
-                return KeyCode.S;
-            if (key == 'd' || key == 'D')
-                return KeyCode.D;
-            if (key == 'w' || key == 'W')
-                return KeyCode.W;
-            if (key == 'q' || key == 'Q')
-                return KeyCode.Q;
-            if (key == 'e' || key == 'E')
-                return KeyCode.E;
-            if (key == 'f' || key == 'F')
-                return KeyCode.F;
-            if (key == 'r' || key == 'R')
-                return KeyCode.R;
-            if (key == 't' || key == 'T')
-                return KeyCode.T;
-            if (key == 'g' || key == 'G')
-                return KeyCode.G;
-            return KeyCode.None;
+            switch (key)
+            {
+                case ConsoleKey.S:
+                    return KeyCode.S;
+                case ConsoleKey.A:
+                    return KeyCode.A;
+                case ConsoleKey.D:
+                    return KeyCode.D;
+                case ConsoleKey.W:
+                    return KeyCode.W;
+                case ConsoleKey.E:
+                    return KeyCode.E;
+                case ConsoleKey.F:
+                    return KeyCode.F;
+                case ConsoleKey.R:
+                    return KeyCode.R;
+                case ConsoleKey.T:
+                    return KeyCode.T;
+                case ConsoleKey.G:
+                    return KeyCode.G;
+                default:
+                    return KeyCode.None;
+            }
         }
     }
 }
